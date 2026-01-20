@@ -7,12 +7,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 public class CalculatorTests {
-    private Test test = new Test();
     @org.junit.jupiter.api.Test
     @DisplayName("1 + 1 = 2")
     void addsTwoNumbers() {
-        Test test = new Test();
-        assertEquals(2, test.add(1, 1), "1 + 1 should equal 2");
+        assertEquals(2, Test.add(1, 1), "1 + 1 should equal 2");
     }
 
     @ParameterizedTest(name = "{0} + {1} = {2}")
@@ -23,8 +21,7 @@ public class CalculatorTests {
 			1,  100, 101
 			""")
      void add(int first, int second, int expectedResult) {
-        Test test = new Test();
-        assertEquals(expectedResult, test.add(first, second),
+        assertEquals(expectedResult, Test.add(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
 }
