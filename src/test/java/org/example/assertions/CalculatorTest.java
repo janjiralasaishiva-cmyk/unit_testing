@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -112,6 +113,26 @@ class CalculatorTest {
         if (false) {
             fail("This should never execute");
         }
+    }
+
+    // 1️⃣3️⃣ Iterable/Collection
+    @Test
+    void collectionTest(){
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+        l1.add(4);
+
+        List<Integer> l2 = new ArrayList<>();
+        l2.add(1);
+        l2.add(2);
+        l2.add(3);
+
+
+        assertIterableEquals(l1, l2, () -> l2.size() > l1.size() ?
+                                            l2.size()+ " is greater than "+l1.size() :
+                                            l1.size() + " is greater than "+ l2.size());
     }
 
     @ParameterizedTest
