@@ -1,7 +1,12 @@
 package org.example.basic_test;
 
-public class Test {
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+public class Test {
+       private int id;
     public static int add(int a, int b) {
         return a + b;
     }
